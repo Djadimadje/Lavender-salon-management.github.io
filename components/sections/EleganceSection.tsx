@@ -3,22 +3,22 @@ import Link from 'next/link';
 
 export default function EleganceSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif text-[#3d2817] mb-2">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-4xl font-serif text-[#3d2817] mb-2">
             Elegance comes from being as
           </h2>
-          <h3 className="text-4xl font-serif text-[#8b5e3c]">
+          <h3 className="text-2xl md:text-4xl font-serif text-[#8b5e3c]">
             beautiful inside as outside
           </h3>
-          <p className="text-gray-600 mt-4">Treat yourself to a day of pampering and self care</p>
+          <p className="text-sm md:text-base text-gray-600 mt-4">Treat yourself to a day of pampering and self care</p>
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
           <Link href="/services" className="relative group cursor-pointer">
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
                 src="/services/makeup.jpg"
                 alt="Make up"
@@ -26,15 +26,15 @@ export default function EleganceSection() {
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <span className="text-2xl">💄</span>
-                <h4 className="text-xl font-serif mt-2">Make up</h4>
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
+                <span className="text-xl md:text-2xl">💄</span>
+                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Make up</h4>
               </div>
             </div>
           </Link>
 
           <Link href="/services" className="relative group cursor-pointer">
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
                 src="/services/hair-care.jpg"
                 alt="Hair care"
@@ -42,15 +42,15 @@ export default function EleganceSection() {
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <span className="text-2xl">💇</span>
-                <h4 className="text-xl font-serif mt-2">Hair care</h4>
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
+                <span className="text-xl md:text-2xl">💇</span>
+                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Hair care</h4>
               </div>
             </div>
           </Link>
 
           <Link href="/services" className="relative group cursor-pointer">
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
                 src="/services/nails.jpg"
                 alt="Nails"
@@ -58,15 +58,15 @@ export default function EleganceSection() {
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <span className="text-2xl">💅</span>
-                <h4 className="text-xl font-serif mt-2">Nails</h4>
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
+                <span className="text-xl md:text-2xl">💅</span>
+                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Nails</h4>
               </div>
             </div>
           </Link>
 
           <Link href="/services" className="relative group cursor-pointer">
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
                 src="/services/spa.jpg"
                 alt="Spa treatment"
@@ -74,9 +74,9 @@ export default function EleganceSection() {
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <span className="text-2xl">🧖</span>
-                <h4 className="text-xl font-serif mt-2">Spa treatment</h4>
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
+                <span className="text-xl md:text-2xl">🧖</span>
+                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Spa treatment</h4>
               </div>
             </div>
           </Link>

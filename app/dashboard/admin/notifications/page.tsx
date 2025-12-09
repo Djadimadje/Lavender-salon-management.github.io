@@ -107,32 +107,32 @@ export default function AdminNotificationsPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <FaBell className="text-3xl text-[#8b5e3c]" />
-          <h1 className="text-4xl font-bold text-gray-900">Admin Notifications</h1>
+    <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8">
+      <div className="mb-6 md:mb-8">
+        <div className="flex items-center gap-2 md:gap-3 mb-2">
+          <FaBell className="text-2xl md:text-3xl text-[#8b5e3c]" />
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Admin Notifications</h1>
         </div>
-        <p className="text-gray-600">Monitor system alerts, user activities, and important updates</p>
+        <p className="text-sm md:text-base text-gray-600">Monitor system alerts, user activities, and important updates</p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+      <div className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex gap-6">
+          <div className="flex gap-4 md:gap-6">
             <div>
-              <p className="text-sm text-gray-600">Total Notifications</p>
-              <p className="text-2xl font-bold text-gray-900">{notifications.length}</p>
+              <p className="text-xs md:text-sm text-gray-600">Total Notifications</p>
+              <p className="text-xl md:text-2xl font-bold text-gray-900">{notifications.length}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-600">Unread</p>
-              <p className="text-2xl font-bold text-[#8b5e3c]">{unreadCount}</p>
+              <p className="text-xs md:text-sm text-gray-600">Unread</p>
+              <p className="text-xl md:text-2xl font-bold text-[#8b5e3c]">{unreadCount}</p>
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-2 md:gap-3 flex-wrap">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 md:px-4 py-2 rounded-lg font-medium transition-colors text-sm md:text-base ${
                 filter === 'all'
                   ? 'bg-[#8b5e3c] text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -142,7 +142,7 @@ export default function AdminNotificationsPage() {
             </button>
             <button
               onClick={() => setFilter('unread')}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 md:px-4 py-2 rounded-lg font-medium transition-colors text-sm md:text-base ${
                 filter === 'unread'
                   ? 'bg-[#8b5e3c] text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -153,10 +153,11 @@ export default function AdminNotificationsPage() {
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="px-4 py-2 rounded-lg font-medium bg-green-600 text-white hover:bg-green-700 transition-colors flex items-center gap-2"
+                className="px-3 md:px-4 py-2 rounded-lg font-medium bg-green-600 text-white hover:bg-green-700 transition-colors flex items-center gap-2 text-sm md:text-base"
               >
                 <FaCheck />
-                Mark All as Read
+                <span className="hidden sm:inline">Mark All as Read</span>
+                <span className="sm:hidden">Mark All</span>
               </button>
             )}
           </div>
@@ -165,10 +166,10 @@ export default function AdminNotificationsPage() {
 
       <div className="space-y-3">
         {filteredNotifications.length === 0 ? (
-          <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <FaBell className="text-6xl text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No notifications</h3>
-            <p className="text-gray-500">
+          <div className="bg-white rounded-lg shadow-md p-8 md:p-12 text-center">
+            <FaBell className="text-5xl md:text-6xl text-gray-300 mx-auto mb-4" />
+            <h3 className="text-lg md:text-xl font-semibold text-gray-600 mb-2">No notifications</h3>
+            <p className="text-sm md:text-base text-gray-500">
               {filter === 'unread' 
                 ? "You're all caught up! No unread notifications."
                 : "You don't have any notifications yet."}
@@ -178,56 +179,57 @@ export default function AdminNotificationsPage() {
           filteredNotifications.map((notification) => (
             <div
               key={notification.id}
-              className={`bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg ${
+              className={`bg-white rounded-lg shadow-md p-4 md:p-6 transition-all hover:shadow-lg ${
                 !notification.read ? 'border-l-4 border-[#8b5e3c] bg-blue-50/30' : ''
               }`}
             >
-              <div className="flex items-start gap-4">
-                <div className="text-4xl flex-shrink-0">
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="text-2xl md:text-4xl flex-shrink-0">
                   {getNotificationIcon(notification.type)}
                 </div>
 
-                <div className="flex-1">
-                  <div className="flex items-start justify-between gap-4 mb-2">
-                    <div className="flex items-center gap-3">
-                      <h3 className={`text-lg font-semibold ${
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-2 mb-2">
+                    <div className="flex items-center gap-2 md:gap-3 flex-wrap">
+                      <h3 className={`text-base md:text-lg font-semibold ${
                         !notification.read ? 'text-gray-900' : 'text-gray-700'
                       }`}>
                         {notification.title}
                       </h3>
-                      <span className={`text-xs px-2 py-1 rounded-full border ${getPriorityColor(notification.priority)}`}>
+                      <span className={`text-xs px-2 py-1 rounded-full border whitespace-nowrap ${getPriorityColor(notification.priority)}`}>
                         {notification.priority.toUpperCase()}
                       </span>
                     </div>
                     {!notification.read && (
-                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap">
                         New
                       </span>
                     )}
                   </div>
-                  <p className={`mb-3 ${
+                  <p className={`mb-3 text-sm md:text-base ${
                     !notification.read ? 'text-gray-800' : 'text-gray-600'
                   }`}>
                     {notification.message}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm text-gray-500">{notification.time}</p>
-                    <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                    <p className="text-xs md:text-sm text-gray-500">{notification.time}</p>
+                    <div className="flex gap-2 flex-wrap">
                       {!notification.read && (
                         <button
                           onClick={() => markAsRead(notification.id)}
-                          className="flex items-center gap-2 px-3 py-1 text-sm bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors"
+                          className="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1 text-xs md:text-sm bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors"
                         >
                           <FaEnvelopeOpen />
-                          Mark as Read
+                          <span className="hidden sm:inline">Mark as Read</span>
+                          <span className="sm:hidden">Read</span>
                         </button>
                       )}
                       <button
                         onClick={() => deleteNotification(notification.id)}
-                        className="flex items-center gap-2 px-3 py-1 text-sm bg-red-100 text-red-700 rounded hover:bg-red-200 transition-colors"
+                        className="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1 text-xs md:text-sm bg-red-100 text-red-700 rounded hover:bg-red-200 transition-colors"
                       >
                         <FaTrash />
-                        Delete
+                        <span className="hidden sm:inline">Delete</span>
                       </button>
                     </div>
                   </div>

@@ -76,27 +76,27 @@ export default function HistoryPage() {
   );
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">Service History</h1>
-        <p className="text-gray-200">View your past appointments and services</p>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">Service History</h1>
+        <p className="text-sm md:text-base text-gray-200">View your past appointments and services</p>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 text-sm">Total Visits</p>
-          <p className="text-3xl font-bold text-gray-900 mt-2">{appointmentHistory.length}</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+          <p className="text-gray-600 text-xs md:text-sm">Total Visits</p>
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">{appointmentHistory.length}</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 text-sm">Total Spent</p>
-          <p className="text-3xl font-bold text-gray-900 mt-2">${totalSpent.toFixed(2)}</p>
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+          <p className="text-gray-600 text-xs md:text-sm">Total Spent</p>
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">${totalSpent.toFixed(2)}</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 text-sm">Average Rating</p>
-          <p className="text-3xl font-bold text-gray-900 mt-2 flex items-center gap-2">
-            5.0 <FaStar className="text-yellow-500 text-xl" />
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+          <p className="text-gray-600 text-xs md:text-sm">Average Rating</p>
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2 flex items-center gap-2">
+            5.0 <FaStar className="text-yellow-500 text-lg md:text-xl" />
           </p>
         </div>
       </div>

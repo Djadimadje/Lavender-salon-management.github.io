@@ -65,11 +65,11 @@ export default function AppointmentsPage() {
   const appointments = activeTab === 'upcoming' ? upcomingAppointments : pastAppointments;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">My Appointments</h1>
-        <p className="text-gray-200">View and manage your salon appointments</p>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">My Appointments</h1>
+        <p className="text-sm md:text-base text-gray-200">View and manage your salon appointments</p>
       </div>
 
       {/* Tabs */}
@@ -82,9 +82,10 @@ export default function AppointmentsPage() {
                 activeTab === 'upcoming'
                   ? 'border-[#8b5e3c] text-[#8b5e3c]'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } w-1/2 py-4 px-1 text-center border-b-2 font-medium`}
+              } w-1/2 py-3 md:py-4 px-1 text-center border-b-2 font-medium text-sm md:text-base`}
             >
-              Upcoming Appointments
+              <span className="hidden sm:inline">Upcoming Appointments</span>
+              <span className="sm:hidden">Upcoming</span>
             </button>
             <button
               onClick={() => setActiveTab('past')}
@@ -92,36 +93,37 @@ export default function AppointmentsPage() {
                 activeTab === 'past'
                   ? 'border-[#8b5e3c] text-[#8b5e3c]'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } w-1/2 py-4 px-1 text-center border-b-2 font-medium`}
+              } w-1/2 py-3 md:py-4 px-1 text-center border-b-2 font-medium text-sm md:text-base`}
             >
-              Past Appointments
+              <span className="hidden sm:inline">Past Appointments</span>
+              <span className="sm:hidden">Past</span>
             </button>
           </nav>
         </div>
 
         {/* Appointments List */}
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           {appointments.length === 0 ? (
-            <p className="text-gray-500 text-center py-8">No appointments found</p>
+            <p className="text-gray-500 text-center py-8 text-sm md:text-base">No appointments found</p>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {appointments.map((appointment) => (
                 <div
                   key={appointment.id}
-                  className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+                  className="border border-gray-200 rounded-lg p-4 md:p-6 hover:shadow-md transition-shadow"
                 >
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">
+                      <h3 className="text-lg md:text-xl font-semibold text-gray-900">
                         {appointment.service}
                       </h3>
-                      <p className="text-gray-600 flex items-center gap-2 mt-1">
-                        <FaUser className="text-sm" />
+                      <p className="text-sm md:text-base text-gray-600 flex items-center gap-2 mt-1">
+                        <FaUser className="text-xs md:text-sm" />
                         {appointment.stylist}
                       </p>
                     </div>
                     <span
-                      className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap ${
                         appointment.status === 'Confirmed'
                           ? 'bg-green-100 text-green-800'
                           : appointment.status === 'Pending'
@@ -133,7 +135,7 @@ export default function AppointmentsPage() {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
                     <div className="flex items-center gap-2">
                       <FaCalendarAlt className="text-[#8b5e3c]" />
                       <span>{appointment.date}</span>
@@ -153,11 +155,11 @@ export default function AppointmentsPage() {
                   </div>
 
                   {activeTab === 'upcoming' && (
-                    <div className="mt-4 pt-4 border-t border-gray-200 flex gap-3">
-                      <button className="px-4 py-2 bg-[#8b5e3c] text-white rounded-lg hover:bg-[#3d2817] transition-colors">
+                    <div className="mt-4 pt-4 border-t border-gray-200 flex flex-col sm:flex-row gap-2 md:gap-3">
+                      <button className="px-3 md:px-4 py-2 bg-[#8b5e3c] text-white rounded-lg hover:bg-[#3d2817] transition-colors text-sm md:text-base">
                         Reschedule
                       </button>
-                      <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                      <button className="px-3 md:px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm md:text-base">
                         Cancel
                       </button>
                     </div>

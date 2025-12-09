@@ -101,54 +101,55 @@ export default function AdminTransactionsPage() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Transactions</h1>
-          <p className="text-gray-600 mt-1">Manage and monitor all payment transactions</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Transactions</h1>
+          <p className="text-sm md:text-base text-gray-600 mt-1">Manage and monitor all payment transactions</p>
         </div>
-        <button className="flex items-center gap-2 bg-[#3d2817] text-white px-6 py-3 rounded-lg hover:bg-[#2a1a0f] transition-colors">
+        <button className="flex items-center gap-2 bg-[#3d2817] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#2a1a0f] transition-colors text-sm md:text-base">
           <FaDownload />
-          <span>Export Report</span>
+          <span className="hidden sm:inline">Export Report</span>
+          <span className="sm:hidden">Export</span>
         </button>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {stats.map((stat, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-            <p className="text-gray-600 text-sm">{stat.label}</p>
+          <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+            <p className="text-gray-600 text-xs md:text-sm">{stat.label}</p>
             <div className="flex items-end justify-between mt-2">
-              <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
-              <span className={`text-sm font-semibold ${stat.color}`}>{stat.change}</span>
+              <p className="text-2xl md:text-3xl font-bold text-gray-900">{stat.value}</p>
+              <span className={`text-xs md:text-sm font-semibold ${stat.color}`}>{stat.change}</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* Filters */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
           {/* Search */}
           <div className="relative">
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
             <input
               type="text"
               placeholder="Search transactions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961]"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] text-sm md:text-base"
             />
           </div>
 
           {/* Status Filter */}
           <div className="relative">
-            <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] appearance-none"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] appearance-none text-sm md:text-base"
             >
               <option value="all">All Status</option>
               <option value="completed">Completed</option>

@@ -25,26 +25,26 @@ export default function CustomerDashboard() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">Welcome Back!</h1>
-        <p className="text-gray-200">Here&apos;s an overview of your beauty journey</p>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">Welcome Back!</h1>
+        <p className="text-sm md:text-base text-gray-200">Here&apos;s an overview of your beauty journey</p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+            <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-600 text-sm">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
+                  <p className="text-gray-600 text-xs md:text-sm">{stat.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
                 </div>
-                <div className={`${stat.color} p-3 rounded-full`}>
-                  <Icon className="text-white text-2xl" />
+                <div className={`${stat.color} p-2 md:p-3 rounded-full`}>
+                  <Icon className="text-white text-xl md:text-2xl" />
                 </div>
               </div>
             </div>
@@ -53,18 +53,18 @@ export default function CustomerDashboard() {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Quick Actions</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {quickActions.map((action, index) => {
             const Icon = action.icon;
             return (
               <Link
                 key={index}
                 href={action.href}
-                className={`${action.color} text-white p-6 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-3`}
+                className={`${action.color} text-white p-4 md:p-6 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2 md:gap-3 text-sm md:text-base`}
               >
-                <Icon className="text-2xl" />
+                <Icon className="text-xl md:text-2xl" />
                 <span className="font-semibold">{action.label}</span>
               </Link>
             );
@@ -73,17 +73,19 @@ export default function CustomerDashboard() {
       </div>
 
       {/* Upcoming Appointments */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold text-gray-900">Upcoming Appointments</h2>
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900">Upcoming Appointments</h2>
           <Link
             href="/booking?from=dashboard"
-            className="text-[#8b5e3c] hover:text-[#c9a961] font-semibold text-sm"
+            className="text-[#8b5e3c] hover:text-[#c9a961] font-semibold text-xs md:text-sm"
           >
             Book New →
           </Link>
         </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto -mx-4 md:mx-0">
+          <div className="inline-block min-w-full align-middle">
+            <div className="overflow-hidden">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
@@ -134,6 +136,8 @@ export default function CustomerDashboard() {
               ))}
             </tbody>
           </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

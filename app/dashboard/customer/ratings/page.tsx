@@ -142,34 +142,34 @@ export default function RatingsPage() {
     : 0;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">My Ratings & Reviews</h1>
-        <p className="text-gray-200">Share your experience and help others</p>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">My Ratings & Reviews</h1>
+        <p className="text-gray-200 text-sm md:text-base">Share your experience and help others</p>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 text-sm">Total Reviews</p>
-          <p className="text-3xl font-bold text-gray-900 mt-2">{ratings.length}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+          <p className="text-gray-600 text-xs md:text-sm">Total Reviews</p>
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">{ratings.length}</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 text-sm">Average Rating</p>
-          <p className="text-3xl font-bold text-gray-900 mt-2 flex items-center gap-2">
-            {avgRating} <FaStar className="text-yellow-500 text-xl" />
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+          <p className="text-gray-600 text-xs md:text-sm">Average Rating</p>
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2 flex items-center gap-2">
+            {avgRating} <FaStar className="text-yellow-500 text-lg md:text-xl" />
           </p>
         </div>
       </div>
 
       {/* Pending Ratings */}
       {pendingRatings.length > 0 && (
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Pending Reviews</h2>
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+          <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Pending Reviews</h2>
           <div className="space-y-4">
             {pendingRatings.map((pending) => (
-              <div key={pending.appointmentId} className="border border-gray-200 rounded-lg p-4">
+              <div key={pending.appointmentId} className="border border-gray-200 rounded-lg p-3 md:p-4">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="font-semibold text-gray-900">{pending.service}</h3>
@@ -186,7 +186,7 @@ export default function RatingsPage() {
 
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
                       Your Rating
                     </label>
                     <StarRating
@@ -204,7 +204,7 @@ export default function RatingsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
                       Your Review
                     </label>
                     <textarea
@@ -220,13 +220,13 @@ export default function RatingsPage() {
                         })
                       }
                       placeholder="Share your experience..."
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8b5e3c] focus:border-transparent"
+                      className="w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8b5e3c] focus:border-transparent text-sm md:text-base"
                     />
                   </div>
 
                   <button
                     onClick={() => handleSubmitRating(pending.appointmentId)}
-                    className="px-6 py-2 bg-[#c9a961] text-white rounded-lg hover:bg-[#8b5e3c] transition-colors"
+                    className="px-4 md:px-6 py-2 bg-[#c9a961] text-white rounded-lg hover:bg-[#8b5e3c] transition-colors text-sm md:text-base"
                   >
                     Submit Review
                   </button>
@@ -238,19 +238,19 @@ export default function RatingsPage() {
       )}
 
       {/* Submitted Ratings */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Your Reviews</h2>
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+        <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Your Reviews</h2>
         <div className="space-y-4">
           {ratings.map((rating) => (
-            <div key={rating.id} className="border border-gray-200 rounded-lg p-4">
-              <div className="flex items-start justify-between mb-3">
+            <div key={rating.id} className="border border-gray-200 rounded-lg p-3 md:p-4">
+              <div className="flex flex-col sm:flex-row items-start justify-between mb-3 gap-3">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">{rating.service}</h3>
-                  <p className="text-sm text-gray-600 flex items-center gap-2 mt-1">
+                  <h3 className="font-semibold text-gray-900 text-sm md:text-base">{rating.service}</h3>
+                  <p className="text-xs md:text-sm text-gray-600 flex items-center gap-2 mt-1">
                     <FaUser className="text-[#8b5e3c]" />
                     {rating.stylist}
                   </p>
-                  <p className="text-sm text-gray-600 flex items-center gap-2 mt-1">
+                  <p className="text-xs md:text-sm text-gray-600 flex items-center gap-2 mt-1">
                     <FaCalendarAlt className="text-[#8b5e3c]" />
                     {rating.date}
                   </p>
@@ -258,13 +258,13 @@ export default function RatingsPage() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleEditRating(rating.id)}
-                    className="text-[#8b5e3c] hover:text-[#3d2817] text-sm font-medium"
+                    className="text-[#8b5e3c] hover:text-[#3d2817] text-xs md:text-sm font-medium"
                   >
                     {rating.isEditing ? 'Cancel' : 'Edit'}
                   </button>
                   <button
                     onClick={() => handleDeleteRating(rating.id)}
-                    className="text-red-600 hover:text-red-800 text-sm font-medium"
+                    className="text-red-600 hover:text-red-800 text-xs md:text-sm font-medium"
                   >
                     Delete
                   </button>
@@ -291,11 +291,11 @@ export default function RatingsPage() {
                         )
                       )
                     }
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8b5e3c] focus:border-transparent"
+                    className="w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8b5e3c] focus:border-transparent text-sm md:text-base"
                   />
                   <button
                     onClick={() => handleUpdateRating(rating.id, rating.rating, rating.review)}
-                    className="px-6 py-2 bg-[#c9a961] text-white rounded-lg hover:bg-[#8b5e3c] transition-colors"
+                    className="px-4 md:px-6 py-2 bg-[#c9a961] text-white rounded-lg hover:bg-[#8b5e3c] transition-colors text-sm md:text-base"
                   >
                     Save Changes
                   </button>
@@ -303,7 +303,7 @@ export default function RatingsPage() {
               ) : (
                 <>
                   <StarRating rating={rating.rating} readonly />
-                  <p className="text-gray-700 mt-3">{rating.review}</p>
+                  <p className="text-gray-700 mt-3 text-sm md:text-base">{rating.review}</p>
                 </>
               )}
             </div>

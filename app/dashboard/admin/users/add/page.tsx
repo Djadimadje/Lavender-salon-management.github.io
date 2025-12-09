@@ -45,38 +45,38 @@ export default function AddUserPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-8 mb-6">
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
         <button
           onClick={() => router.push('/dashboard/admin/users')}
-          className="flex items-center gap-2 text-gray-200 hover:text-white mb-4 transition-colors"
+          className="flex items-center gap-2 text-sm md:text-base text-gray-200 hover:text-white mb-4 transition-colors"
         >
           <FaArrowLeft />
           <span>Back to User Management</span>
         </button>
-        <h1 className="text-3xl font-bold mb-2">Add New User</h1>
-        <p className="text-gray-200">Select the type of user you want to add</p>
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">Add New User</h1>
+        <p className="text-sm md:text-base text-gray-200">Select the type of user you want to add</p>
       </div>
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-6 lg:p-8 space-y-4 md:space-y-6">
         {/* Role Selection Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {userRoles.map((role) => {
             const Icon = role.icon;
             return (
               <button
                 key={role.id}
                 onClick={() => router.push(role.path)}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105 text-left"
+                className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105 text-left"
               >
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className={`${role.color} p-6 rounded-full`}>
-                    <Icon className="text-white text-5xl" />
+                <div className="flex flex-col items-center text-center space-y-3 md:space-y-4">
+                  <div className={`${role.color} p-4 md:p-6 rounded-full`}>
+                    <Icon className="text-white text-4xl md:text-5xl" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{role.title}</h3>
-                    <p className="text-sm mt-2 text-gray-600">{role.description}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900">{role.title}</h3>
+                    <p className="text-xs md:text-sm mt-2 text-gray-600">{role.description}</p>
                   </div>
-                  <div className="mt-4 text-sm font-medium text-[#8b5e3c]">
+                  <div className="mt-4 text-xs md:text-sm font-medium text-[#8b5e3c]">
                     Click to add →
                   </div>
                 </div>

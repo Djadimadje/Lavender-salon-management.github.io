@@ -61,15 +61,15 @@ export default function AdminBookingsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">Manage Bookings</h1>
-        <p className="text-gray-200">View and manage all salon appointments</p>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">Manage Bookings</h1>
+        <p className="text-sm md:text-base text-gray-200">View and manage all salon appointments</p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
@@ -89,11 +89,11 @@ export default function AdminBookingsPage() {
       </div>
 
       {/* Filters and Search */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex items-center gap-2">
             <FaFilter className="text-gray-600" />
-            <h2 className="text-xl font-bold text-gray-900">Filter Bookings</h2>
+            <h2 className="text-lg md:text-xl font-bold text-gray-900">Filter Bookings</h2>
           </div>
           
           <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
@@ -110,12 +110,12 @@ export default function AdminBookingsPage() {
             </div>
 
             {/* Status Filter */}
-            <div className="flex gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
               {['All', 'Confirmed', 'Pending', 'Completed', 'Cancelled'].map((status) => (
                 <button
                   key={status}
                   onClick={() => setFilterStatus(status)}
-                  className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                  className={`px-3 md:px-4 py-2 rounded-lg font-semibold transition-colors whitespace-nowrap text-sm md:text-base ${
                     filterStatus === status
                       ? 'bg-[#8b5e3c] text-white'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'

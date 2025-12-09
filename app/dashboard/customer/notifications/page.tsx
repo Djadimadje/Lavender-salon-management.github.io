@@ -107,29 +107,29 @@ export default function CustomerNotificationsPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <div className="flex items-center gap-3 mb-2">
-          <FaBell className="text-3xl" />
-          <h1 className="text-3xl font-bold">Notifications</h1>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <div className="flex items-center gap-2 md:gap-3 mb-2">
+          <FaBell className="text-2xl md:text-3xl" />
+          <h1 className="text-2xl md:text-3xl font-bold">Notifications</h1>
         </div>
-        <p className="text-gray-200">Stay updated with your appointments and important messages</p>
+        <p className="text-gray-200 text-sm md:text-base">Stay updated with your appointments and important messages</p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+            <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-600 text-sm">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
+                  <p className="text-gray-600 text-xs md:text-sm">{stat.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
                 </div>
-                <div className={`${stat.color} p-3 rounded-full`}>
-                  <Icon className="text-white text-2xl" />
+                <div className={`${stat.color} p-2 md:p-3 rounded-full`}>
+                  <Icon className="text-white text-xl md:text-2xl" />
                 </div>
               </div>
             </div>
@@ -138,13 +138,13 @@ export default function CustomerNotificationsPage() {
       </div>
 
       {/* Filters and Actions */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h2 className="text-2xl font-bold text-gray-900">All Notifications</h2>
-          <div className="flex gap-3">
+          <h2 className="text-lg md:text-2xl font-bold text-gray-900">All Notifications</h2>
+          <div className="flex flex-wrap gap-2 md:gap-3">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-3 md:px-4 py-2 rounded-lg font-semibold transition-colors text-sm md:text-base ${
                 filter === 'all'
                   ? 'bg-[#8b5e3c] text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -154,21 +154,22 @@ export default function CustomerNotificationsPage() {
             </button>
             <button
               onClick={() => setFilter('unread')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+              className={`px-3 md:px-4 py-2 rounded-lg font-semibold transition-colors text-sm md:text-base ${
                 filter === 'unread'
                   ? 'bg-[#8b5e3c] text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
-              Unread ({unreadCount})
+              <span className="hidden sm:inline">Unread ({unreadCount})</span>
+              <span className="sm:hidden">({unreadCount})</span>
             </button>
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="px-4 py-2 rounded-lg font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors flex items-center gap-2"
+                className="px-3 md:px-4 py-2 rounded-lg font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors flex items-center gap-2 text-sm md:text-base"
               >
                 <FaCheck />
-                Mark All as Read
+                <span className="hidden sm:inline">Mark All as Read</span>
               </button>
             )}
           </div>
@@ -177,18 +178,19 @@ export default function CustomerNotificationsPage() {
 
       {/* Notifications List */}
       {filteredNotifications.length === 0 ? (
-        <div className="bg-white rounded-lg shadow-md p-12 text-center">
-          <FaBell className="text-6xl text-gray-300 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-gray-600 mb-2">No notifications</h3>
-          <p className="text-gray-500">
+        <div className="bg-white rounded-lg shadow-md p-6 md:p-12 text-center">
+          <FaBell className="text-4xl md:text-6xl text-gray-300 mx-auto mb-4" />
+          <h3 className="text-lg md:text-xl font-semibold text-gray-600 mb-2">No notifications</h3>
+          <p className="text-gray-500 text-sm md:text-base">
             {filter === 'unread' 
               ? "You're all caught up! No unread notifications."
               : "You don't have any notifications yet."}
           </p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="overflow-x-auto">
+        <div className="-mx-4 md:mx-0">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -278,6 +280,7 @@ export default function CustomerNotificationsPage() {
               </tbody>
             </table>
           </div>
+        </div>
         </div>
       )}
     </div>

@@ -81,15 +81,15 @@ export default function AdminUsersPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-8 mb-6">
-        <div className="flex justify-between items-center">
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-bold mb-2">User Management</h1>
-            <p className="text-gray-200">Manage customers, stylists, cashiers, and admins</p>
+            <h1 className="text-2xl md:text-3xl font-bold mb-2">User Management</h1>
+            <p className="text-sm md:text-base text-gray-200">Manage customers, stylists, cashiers, and admins</p>
           </div>
           <button 
             onClick={() => router.push('/dashboard/admin/users/add')}
-            className="bg-white text-[#3d2817] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2"
+            className="bg-white text-[#3d2817] px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2 text-sm md:text-base"
           >
             <FaUserPlus />
             <span>Add New User</span>
@@ -97,20 +97,20 @@ export default function AdminUsersPage() {
         </div>
       </div>
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-6 lg:p-8 space-y-4 md:space-y-6">
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+              <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gray-600 text-sm">{stat.label}</p>
-                    <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
+                    <p className="text-gray-600 text-xs md:text-sm">{stat.label}</p>
+                    <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
                   </div>
                   <div className={`${stat.color} p-3 rounded-full`}>
-                    <Icon className="text-white text-2xl" />
+                    <Icon className="text-white text-xl md:text-2xl" />
                   </div>
                 </div>
               </div>
@@ -120,8 +120,8 @@ export default function AdminUsersPage() {
 
         {/* Tabs and Filters */}
         <div className="bg-white rounded-lg shadow-md">
-          <div className="border-b border-gray-200">
-            <nav className="flex px-6">
+          <div className="border-b border-gray-200 overflow-x-auto">
+            <nav className="flex px-4 md:px-6 min-w-max md:min-w-0">
               {[
                 { id: 'all', label: 'All Users' },
                 { id: 'customer', label: 'Customers' },
@@ -135,7 +135,7 @@ export default function AdminUsersPage() {
                     setActiveTab(tab.id);
                     setSpecialtyFilter('all'); // Reset specialty filter when changing tabs
                   }}
-                  className={`py-4 px-6 border-b-2 font-medium transition-colors ${
+                  className={`py-3 md:py-4 px-4 md:px-6 border-b-2 font-medium transition-colors text-sm md:text-base whitespace-nowrap ${
                     activeTab === tab.id
                       ? 'border-[#c9a961] text-[#3d2817]'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
@@ -148,27 +148,27 @@ export default function AdminUsersPage() {
           </div>
 
           {/* Search and Filter */}
-          <div className="p-6 border-b border-gray-200">
-            <div className={`grid grid-cols-1 ${activeTab === 'stylist' ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4`}>
+          <div className="p-4 md:p-6 border-b border-gray-200">
+            <div className={`grid grid-cols-1 ${activeTab === 'stylist' ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-3 md:gap-4`}>
               {/* Search */}
               <div className="relative">
-                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
                 <input
                   type="text"
                   placeholder="Search by name or email..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961]"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] text-sm md:text-base"
                 />
               </div>
 
               {/* Status Filter */}
               <div className="relative">
-                <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
                 <select
                   value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] appearance-none"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] appearance-none text-sm md:text-base"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active</option>
@@ -179,11 +179,11 @@ export default function AdminUsersPage() {
             {/* Specialty Filter - Only show for stylists */}
             {activeTab === 'stylist' && (
               <div className="relative">
-                <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
                 <select
                   value={specialtyFilter}
                   onChange={(e) => setSpecialtyFilter(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] appearance-none"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c9a961] appearance-none text-sm md:text-base"
                 >
                   <option value="all">All Specialties</option>
                     <option value="Hair Styling">Hair Styling</option>

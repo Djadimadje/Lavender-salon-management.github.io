@@ -57,20 +57,20 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">My Profile</h1>
-        <p className="text-gray-200">Manage your account settings and preferences</p>
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">My Profile</h1>
+        <p className="text-sm md:text-base text-gray-200">Manage your account settings and preferences</p>
       </div>
 
       {/* Profile Information */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-semibold text-gray-900">Personal Information</h2>
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+          <h2 className="text-lg md:text-xl font-semibold text-gray-900">Personal Information</h2>
           <button
             onClick={() => setIsEditing(!isEditing)}
-            className="flex items-center gap-2 px-4 py-2 bg-[#8b5e3c] text-white rounded-lg hover:bg-[#3d2817] transition-colors"
+            className="flex items-center gap-2 px-3 md:px-4 py-2 bg-[#8b5e3c] text-white rounded-lg hover:bg-[#3d2817] transition-colors text-sm md:text-base"
           >
             <FaEdit />
             {isEditing ? 'Cancel' : 'Edit'}

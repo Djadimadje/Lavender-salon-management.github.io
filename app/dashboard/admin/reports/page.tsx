@@ -48,26 +48,27 @@ export default function AdminReportsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-8 mb-6">
-        <div className="flex justify-between items-center">
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-bold mb-2">Reports & Analytics</h1>
-            <p className="text-gray-200">Comprehensive business insights and performance metrics</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Reports & Analytics</h1>
+            <p className="text-sm md:text-base text-gray-200">Comprehensive business insights and performance metrics</p>
           </div>
-          <button className="bg-white text-[#3d2817] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2">
+          <button className="bg-white text-[#3d2817] px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2 text-sm md:text-base whitespace-nowrap">
             <FaDownload />
-            Export Report
+            <span className="hidden sm:inline">Export Report</span>
+            <span className="sm:hidden">Export</span>
           </button>
         </div>
       </div>
 
-      <div className="p-8 space-y-12">
+      <div className="p-4 md:p-6 lg:p-8 space-y-8 md:space-y-10 lg:space-y-12">
         {/* 1. Revenue Reports Section */}
-        <div className="space-y-6">
-          <h2 className="text-2xl font-bold text-gray-900">Revenue Reports</h2>
+        <div className="space-y-4 md:space-y-6">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">Revenue Reports</h2>
           
           {/* Overall Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -87,7 +88,7 @@ export default function AdminReportsPage() {
           </div>
 
           {/* Monthly Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {monthlyStats.map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -107,7 +108,7 @@ export default function AdminReportsPage() {
           </div>
 
           {/* Revenue Charts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             <RevenueLineChart data={mockRevenueChartData} />
             <RevenueBarChart data={monthlyRevenueData} />
           </div>
