@@ -9,6 +9,8 @@ import AdminSidebar from '@/components/layout/sidebar/AdminSidebar';
 import CashierSidebar from '@/components/layout/sidebar/Cashier';
 import StylistSidebar from '@/components/layout/sidebar/StylistSidebar';
 import CustomerSidebar from '@/components/layout/sidebar/Customer';
+import Navigation from '@/components/layout/Header/Navigation';
+import Footer from '@/components/layout/Footer';
 import BookingProgress from './components/BookingProgress';
 import StepServiceSelection from './components/StepServiceSelection';
 import StepDateTimeSelection from './components/StepDateTimeSelection';
@@ -133,10 +135,10 @@ function BookingContent() {
 
   return (
     <div className="space-y-6">
-      {/* Welcome Header with Gradient */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">Book an Appointment</h1>
-        <p className="text-gray-200">Schedule your beauty service in just a few simple steps</p>
+      {/* Welcome Header */}
+      <div className="p-4">
+        <h1 className="text-4xl font-bold mb-2 text-center text-gray-900">Book an Appointment</h1>
+        <p className="text-gray-600 text-center">Schedule your beauty service in just a few simple steps</p>
       </div>
 
       {/* Progress Indicator */}
@@ -190,10 +192,14 @@ export default function BookingPage() {
 
   // Otherwise, show standalone booking page
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
-        <BookingContent />
+    <>
+      <Navigation />
+      <div className="min-h-screen bg-gray-50 py-8 pt-24">
+        <div className="container mx-auto px-4">
+          <BookingContent />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

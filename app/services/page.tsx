@@ -10,6 +10,8 @@ import AdminSidebar from '@/components/layout/sidebar/AdminSidebar';
 import CashierSidebar from '@/components/layout/sidebar/Cashier';
 import StylistSidebar from '@/components/layout/sidebar/StylistSidebar';
 import CustomerSidebar from '@/components/layout/sidebar/Customer';
+import Navigation from '@/components/layout/Header/Navigation';
+import Footer from '@/components/layout/Footer';
 import { mockServices } from '@/lib/data/services';
 
 function ServicesContent() {
@@ -51,12 +53,12 @@ function ServicesContent() {
   return (
     <div className="space-y-6">
       {/* Welcome Header with Gradient */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-2">Our Services</h1>
-        <p className="text-gray-200">Browse our wide range of professional salon services</p>
+      <div className="p-4">
+        <h1 className="text-4xl font-bold mb-2 text-center text-gray-900">Our Services</h1>
+        <p className="text-gray-600 text-center">Browse our wide range of professional salon services</p>
       </div>
 
-      {/* Stats Grid */}
+      {/* Stats Grid 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
@@ -74,7 +76,7 @@ function ServicesContent() {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
       {/* Category Filter */}
       <div className="bg-white p-6 rounded-lg shadow-md">
@@ -200,10 +202,14 @@ export default function ServicesPage() {
 
   // Otherwise, show standalone services page
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
-        <ServicesContent />
+    <>
+      <Navigation />
+      <div className="min-h-screen bg-gray-50 py-8 pt-24">
+        <div className="container mx-auto px-4">
+          <ServicesContent />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

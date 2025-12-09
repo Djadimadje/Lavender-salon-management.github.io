@@ -20,15 +20,17 @@ export default function EleganceSection() {
           <Link href="/services" className="relative group cursor-pointer">
             <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
-                src="/services/makeup.jpg"
+                src="/pictures/makeup.jpeg"
                 alt="Make up"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
-                <span className="text-xl md:text-2xl">💄</span>
-                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Make up</h4>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl md:text-2xl">💄</span>
+                  <h4 className="text-base md:text-xl font-serif">Make up</h4>
+                </div>
               </div>
             </div>
           </Link>
@@ -36,15 +38,17 @@ export default function EleganceSection() {
           <Link href="/services" className="relative group cursor-pointer">
             <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
-                src="/services/hair-care.jpg"
+                src="/pictures/hair-care.jpeg"
                 alt="Hair care"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
-                <span className="text-xl md:text-2xl">💇</span>
-                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Hair care</h4>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl md:text-2xl">💇</span>
+                  <h4 className="text-base md:text-xl font-serif">Hair care</h4>
+                </div>
               </div>
             </div>
           </Link>
@@ -52,15 +56,17 @@ export default function EleganceSection() {
           <Link href="/services" className="relative group cursor-pointer">
             <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
-                src="/services/nails.jpg"
+                src="/pictures/nails.jpeg"
                 alt="Nails"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
-                <span className="text-xl md:text-2xl">💅</span>
-                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Nails</h4>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl md:text-2xl">💅</span>
+                  <h4 className="text-base md:text-xl font-serif">Nails</h4>
+                </div>
               </div>
             </div>
           </Link>
@@ -68,15 +74,17 @@ export default function EleganceSection() {
           <Link href="/services" className="relative group cursor-pointer">
             <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
               <Image
-                src="/services/spa.jpg"
+                src="/pictures/spa.jpeg"
                 alt="Spa treatment"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
-                <span className="text-xl md:text-2xl">🧖</span>
-                <h4 className="text-base md:text-xl font-serif mt-1 md:mt-2">Spa treatment</h4>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl md:text-2xl">🧖</span>
+                  <h4 className="text-base md:text-xl font-serif">Spa treatment</h4>
+                </div>
               </div>
             </div>
           </Link>
