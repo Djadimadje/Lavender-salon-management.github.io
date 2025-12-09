@@ -1,3 +1,6 @@
+import { FaHome, FaClipboardList, FaCalendarAlt, FaUser, FaGem } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
 // Stylist Routes
 export const stylistRoutes = {
   dashboard: '/dashboard/stylist',
@@ -8,13 +11,13 @@ export const stylistRoutes = {
 } as const;
 
 // Stylist Navigation Items
-export const stylistNavItems = [
-  { label: 'Dashboard', href: stylistRoutes.dashboard, icon: '🏠', description: 'My Overview' },
-  { label: 'Schedule', href: stylistRoutes.schedule, icon: '📋', description: 'My Calendar' },
-  { label: 'Appointments', href: stylistRoutes.appointments, icon: '📅', description: 'Today\'s Bookings' },
-  { label: 'Clients', href: stylistRoutes.clients, icon: '👤', description: 'Client List' },
-  { label: 'Earnings', href: stylistRoutes.earnings, icon: '💎', description: 'My Earnings' },
-] as const;
+export const stylistNavItems: Array<{ label: string; href: string; icon: IconType; description: string }> = [
+  { label: 'Dashboard', href: stylistRoutes.dashboard, icon: FaHome, description: 'My Overview' },
+  { label: 'Schedule', href: stylistRoutes.schedule, icon: FaClipboardList, description: 'My Calendar' },
+  { label: 'Appointments', href: stylistRoutes.appointments, icon: FaCalendarAlt, description: 'Today\'s Bookings' },
+  { label: 'Clients', href: stylistRoutes.clients, icon: FaUser, description: 'Client List' },
+  { label: 'Earnings', href: stylistRoutes.earnings, icon: FaGem, description: 'My Earnings' },
+];
 
 // Stylist Router Helper
 export const StylistRouter = {

@@ -183,7 +183,7 @@ export default function BookingPage() {
         {renderSidebar()}
 
         {/* Main content area */}
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 ml-64">
           <BookingContent />
         </main>
       </div>

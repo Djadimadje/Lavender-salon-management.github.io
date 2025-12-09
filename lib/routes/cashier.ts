@@ -1,3 +1,6 @@
+import { FaHome, FaCreditCard, FaMoneyBillWave, FaFileInvoice } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
 // Cashier Routes
 export const cashierRoutes = {
   dashboard: '/dashboard/cashier',
@@ -7,12 +10,12 @@ export const cashierRoutes = {
 } as const;
 
 // Cashier Navigation Items
-export const cashierNavItems = [
-  { label: 'Dashboard', href: cashierRoutes.dashboard, icon: '🏠', description: 'Today\'s Summary' },
-  { label: 'Transactions', href: cashierRoutes.transactions, icon: '💳', description: 'Payment Records' },
-  { label: 'Payments', href: cashierRoutes.payments, icon: '💵', description: 'Process Payments' },
-  { label: 'Invoices', href: cashierRoutes.invoices, icon: '📄', description: 'Generate Invoices' },
-] as const;
+export const cashierNavItems: Array<{ label: string; href: string; icon: IconType; description: string }> = [
+  { label: 'Dashboard', href: cashierRoutes.dashboard, icon: FaHome, description: 'Today\'s Summary' },
+  { label: 'Transactions', href: cashierRoutes.transactions, icon: FaCreditCard, description: 'Payment Records' },
+  { label: 'Payments', href: cashierRoutes.payments, icon: FaMoneyBillWave, description: 'Process Payments' },
+  { label: 'Invoices', href: cashierRoutes.invoices, icon: FaFileInvoice, description: 'Generate Invoices' },
+];
 
 // Cashier Router Helper
 export const CashierRouter = {

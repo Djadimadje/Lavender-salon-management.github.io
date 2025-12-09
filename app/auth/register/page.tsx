@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function RegisterPage() {
@@ -29,6 +30,17 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
+        {/* Logo Link to Landing Page */}
+        <Link href="/" className="flex items-center justify-center mb-8 group">
+          <Image
+            src="/pictures/logo.png"
+            alt="Lavender Salon Logo"
+            width={64}
+            height={64}
+            className="object-contain mix-blend-multiply transition-transform group-hover:scale-105"
+          />
+        </Link>
+        
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Create Account</h1>
           <p className="text-gray-600 mt-2">Join Lavender Salon today</p>

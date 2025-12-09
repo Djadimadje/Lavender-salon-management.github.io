@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { removeToken } from '@/lib/auth';
 import { customerNavItems } from '@/lib/routes';
-import { FaBell } from 'react-icons/fa';
+import { FaBell, FaSignOutAlt } from 'react-icons/fa';
 
 interface CustomerSidebarProps {
   userEmail?: string;
@@ -31,7 +31,7 @@ export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
   };
 
   return (
-    <aside className="w-72 bg-gradient-to-b from-[#3d2817] to-[#2a1a0f] shadow-xl min-h-screen flex flex-col overflow-visible">
+    <aside className="w-64 bg-gradient-to-b from-[#3d2817] to-[#2a1a0f] shadow-xl h-screen flex flex-col overflow-visible fixed left-0 top-0">
       {/* Header 
       <div className="p-6 border-b border-white/10">
         <Link href="/" className="flex items-center gap-3 group">
@@ -123,6 +123,7 @@ export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
           // Check if path matches, ignoring query parameters
           const pathWithoutQuery = item.href.split('?')[0];
           const isActive = pathname === pathWithoutQuery || pathname === item.href;
+          const Icon = item.icon;
           return (
             <Link
               key={item.href}
@@ -137,13 +138,11 @@ export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
                 ${isActive ? 'border-l-4 border-white' : 'border-l-4 border-transparent'}
               `}
             >
-              <span
-                className={`text-2xl ${
+              <Icon
+                className={`text-xl ${
                   isActive ? 'scale-110' : 'group-hover:scale-110'
                 } transition-transform`}
-              >
-                {item.icon}
-              </span>
+              />
               <div className="flex-1">
                 <div className={`font-semibold ${isActive ? 'text-white' : ''}`}>
                   {item.label}
@@ -167,9 +166,9 @@ export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
       <div className="p-6 border-t border-gray-300">
         <button
           onClick={handleLogout}
-          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#3d2817] text-white hover:bg-[#2a1a0f] font-semibold transition-colors"
+          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 font-semibold transition-colors"
         >
-          <span>🚪</span>
+          <FaSignOutAlt className="text-lg" />
           <span>Logout</span>
         </button>
       </div>

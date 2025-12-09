@@ -1,3 +1,6 @@
+import { FaHome, FaCalendarAlt, FaUsers, FaChartLine, FaImage, FaCreditCard, FaStar } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
 // Admin Routes
 export const adminRoutes = {
   dashboard: '/dashboard/admin',
@@ -10,15 +13,15 @@ export const adminRoutes = {
 } as const;
 
 // Admin Navigation Items
-export const adminNavItems = [
-  { label: 'Dashboard', href: adminRoutes.dashboard, icon: '🏠', description: 'Overview & Analytics' },
-  { label: 'Bookings', href: adminRoutes.bookings, icon: '📅', description: 'Manage Appointments' },
-  { label: 'Users', href: adminRoutes.users, icon: '👥', description: 'Staff & Customers' },
-  { label: 'Reports', href: adminRoutes.reports, icon: '📈', description: 'Business Reports' },
-  { label: 'Content', href: adminRoutes.content, icon: '🖼️', description: 'Website Content' },
-  { label: 'Transactions', href: adminRoutes.transactions, icon: '💳', description: 'Manage Payments' },
-  { label: 'Ratings', href: adminRoutes.ratings, icon: '⭐', description: 'Customer Feedback' },
-] as const;
+export const adminNavItems: Array<{ label: string; href: string; icon: IconType; description: string }> = [
+  { label: 'Dashboard', href: adminRoutes.dashboard, icon: FaHome, description: 'Overview & Analytics' },
+  { label: 'Bookings', href: adminRoutes.bookings, icon: FaCalendarAlt, description: 'Manage Appointments' },
+  { label: 'Users', href: adminRoutes.users, icon: FaUsers, description: 'Staff & Customers' },
+  { label: 'Reports', href: adminRoutes.reports, icon: FaChartLine, description: 'Business Reports' },
+  { label: 'Content', href: adminRoutes.content, icon: FaImage, description: 'Website Content' },
+  { label: 'Transactions', href: adminRoutes.transactions, icon: FaCreditCard, description: 'Manage Payments' },
+  { label: 'Ratings', href: adminRoutes.ratings, icon: FaStar, description: 'Customer Feedback' },
+];
 
 // Admin Router Helper
 export const AdminRouter = {

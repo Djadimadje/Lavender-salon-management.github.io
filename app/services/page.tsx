@@ -193,7 +193,7 @@ export default function ServicesPage() {
         {renderSidebar()}
 
         {/* Main content area */}
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 ml-64">
           <ServicesContent />
         </main>
       </div>
