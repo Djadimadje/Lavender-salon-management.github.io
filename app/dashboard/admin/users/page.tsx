@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaSearch, FaFilter, FaUserPlus, FaUsers, FaUserTie, FaCashRegister, FaUserShield } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 import UserTable from '@/components/users/UserTable';
 import { getCustomers } from '@/lib/data/customers';
 import { getStylists } from '@/lib/data/stylists';
@@ -81,7 +82,7 @@ export default function AdminUsersPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#3d2817] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6 rounded-lg shadow-md">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold mb-2">User Management</h1>

@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { FaUsers, FaCalendarAlt, FaChartLine, FaEdit } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
+import StatsCard from '@/components/shared/StatsCard';
 
 export default function AdminDashboard() {
   const stats = [
@@ -27,30 +29,22 @@ export default function AdminDashboard() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">Welcome, Admin!</h1>
-        <p className="text-sm md:text-base text-gray-200">Here&apos;s an overview of your salon business</p>
-      </div>
+      <PageHeader 
+        title="Welcome, Admin!" 
+        description="Here's an overview of your salon business"
+      />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {stats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-gray-600 text-sm">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
-                </div>
-                <div className={`${stat.color} p-3 rounded-full`}>
-                  <Icon className="text-white text-2xl" />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        {stats.map((stat, index) => (
+          <StatsCard 
+            key={index}
+            label={stat.label}
+            value={stat.value}
+            icon={stat.icon}
+            color={stat.color}
+          />
+        ))}
       </div>
 
       {/* Quick Actions */}

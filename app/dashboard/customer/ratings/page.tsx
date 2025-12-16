@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaStar, FaCalendarAlt, FaUser } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 interface RatingData {
   id: number;
@@ -143,11 +144,10 @@ export default function RatingsPage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">My Ratings & Reviews</h1>
-        <p className="text-gray-200 text-sm md:text-base">Share your experience and help others</p>
-      </div>
+      <PageHeader 
+        title="My Ratings & Reviews" 
+        description="Share your experience and help others" 
+      />
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">

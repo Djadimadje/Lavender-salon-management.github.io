@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "react-icons/fa": ["./lib/icon-shims/fa"],
+      "react-icons/fi": ["./lib/icon-shims/fi"],
+      "react-icons/fa6": ["./lib/icon-shims/fa6"]
     }
   },
   "include": [

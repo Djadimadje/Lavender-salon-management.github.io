@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaCalendarAlt, FaClock, FaUser, FaMapMarkerAlt } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 export default function AppointmentsPage() {
   const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
@@ -66,11 +67,10 @@ export default function AppointmentsPage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">My Appointments</h1>
-        <p className="text-sm md:text-base text-gray-200">View and manage your salon appointments</p>
-      </div>
+      <PageHeader 
+        title="My Appointments" 
+        description="View and manage your salon appointments" 
+      />
 
       {/* Tabs */}
       <div className="bg-white rounded-lg shadow-md">

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaPhone, FaLock, FaBell, FaEdit } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 export default function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
@@ -58,11 +59,10 @@ export default function ProfilePage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">My Profile</h1>
-        <p className="text-sm md:text-base text-gray-200">Manage your account settings and preferences</p>
-      </div>
+      <PageHeader 
+        title="My Profile" 
+        description="Manage your account settings and preferences" 
+      />
 
       {/* Profile Information */}
       <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">

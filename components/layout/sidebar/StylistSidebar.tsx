@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { removeToken } from '@/lib/auth';
 import { stylistNavItems } from '@/lib/routes';
@@ -9,12 +10,29 @@ import { FaBell, FaSignOutAlt } from 'react-icons/fa';
 
 interface StylistSidebarProps {
   userEmail?: string;
+  userName?: string;
+  userImage?: string;
 }
 
-export default function StylistSidebar({ userEmail }: StylistSidebarProps) {
+export default function StylistSidebar({ userEmail, userName, userImage }: StylistSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [showNotifications, setShowNotifications] = useState(false);
+
+  // Get user initials for fallback
+  const getInitials = (email: string) => {
+    if (userName) {
+      return userName
+        .split(' ')
+        .map(n => n[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2);
+    }
+    return email.split('@')[0].slice(0, 2).toUpperCase();
+  };
+
+  const initials = getInitials(userEmail || 'stylist@lavender.com');
 
   // Mock notifications for stylist
   const notifications = [
@@ -53,10 +71,24 @@ export default function StylistSidebar({ userEmail }: StylistSidebarProps) {
       {/* User Info */}
       <div className="px-6 py-4 border-b border-white/10">
         <div className="flex items-center gap-3">
-          <span className="text-3xl">✂️</span>
+          {/* Profile Picture or Initials */}
+          {userImage ? (
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#c9a961]">
+              <Image
+                src={userImage}
+                alt="Profile"
+                fill
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <div className="w-10 h-10 bg-gradient-to-br from-[#c9a961] to-[#8b5e3c] rounded-full flex items-center justify-center ring-2 ring-[#c9a961]/50">
+              <span className="text-white font-bold text-sm">{initials}</span>
+            </div>
+          )}
           <div className="flex-1">
             <p className="font-semibold text-white">
-              Stylist Portal
+              {userName || 'Stylist Portal'}
             </p>
             <p className="text-xs text-white/60">
               {userEmail || 'stylist@lavender.com'}

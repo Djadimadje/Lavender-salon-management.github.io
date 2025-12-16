@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaBell, FaCheck, FaTrash, FaEnvelopeOpen, FaCalendarAlt, FaClock } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 interface Notification {
   id: number;
@@ -108,14 +109,10 @@ export default function CustomerNotificationsPage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <div className="flex items-center gap-2 md:gap-3 mb-2">
-          <FaBell className="text-2xl md:text-3xl" />
-          <h1 className="text-2xl md:text-3xl font-bold">Notifications</h1>
-        </div>
-        <p className="text-gray-200 text-sm md:text-base">Stay updated with your appointments and important messages</p>
-      </div>
+      <PageHeader 
+        title="Notifications" 
+        description="Stay updated with your appointments and important messages" 
+      />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

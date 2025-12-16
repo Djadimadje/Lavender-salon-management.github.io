@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { removeToken } from '@/lib/auth';
 import { customerNavItems } from '@/lib/routes';
@@ -9,12 +10,29 @@ import { FaBell, FaSignOutAlt } from 'react-icons/fa';
 
 interface CustomerSidebarProps {
   userEmail?: string;
+  userName?: string;
+  userImage?: string;
 }
 
-export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
+export default function CustomerSidebar({ userEmail, userName, userImage }: CustomerSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [showNotifications, setShowNotifications] = useState(false);
+
+  // Get user initials for fallback
+  const getInitials = (email: string) => {
+    if (userName) {
+      return userName
+        .split(' ')
+        .map(n => n[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2);
+    }
+    return email.split('@')[0].slice(0, 2).toUpperCase();
+  };
+
+  const initials = getInitials(userEmail || 'customer@lavender.com');
 
   // Mock notifications (in production, fetch from API)
   const notifications = [
@@ -38,6 +56,7 @@ export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
           <div className="w-12 h-12 bg-[#c9a961] rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
             🌿
           </div>
+  
           <div>
             <h2 className="text-2xl font-serif italic text-white">
               Lavender
@@ -52,10 +71,24 @@ export default function CustomerSidebar({ userEmail }: CustomerSidebarProps) {
       {/* User Info */}
       <div className="px-6 py-4 border-b border-white/10">
         <div className="flex items-center gap-3">
-          <span className="text-3xl">👤</span>
+          {/* Profile Picture or Initials */}
+          {userImage ? (
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#c9a961]">
+              <Image
+                src={userImage}
+                alt="Profile"
+                fill
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <div className="w-10 h-10 bg-gradient-to-br from-[#c9a961] to-[#8b5e3c] rounded-full flex items-center justify-center ring-2 ring-[#c9a961]/50">
+              <span className="text-white font-bold text-sm">{initials}</span>
+            </div>
+          )}
           <div className="flex-1">
             <p className="font-semibold text-white">
-              My Account
+              {userName || 'My Account'}
             </p>
             <p className="text-xs text-white/60">
               {userEmail || 'customer@lavender.com'}

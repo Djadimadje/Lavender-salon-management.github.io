@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { FaUsers, FaCut, FaCashRegister, FaUserShield, FaArrowLeft } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 export default function AddUserPage() {
   const router = useRouter();
@@ -45,7 +46,7 @@ export default function AddUserPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#3d2817] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6 rounded-lg shadow-md">
         <button
           onClick={() => router.push('/dashboard/admin/users')}
           className="flex items-center gap-2 text-sm md:text-base text-gray-200 hover:text-white mb-4 transition-colors"

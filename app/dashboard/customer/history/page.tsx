@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaCalendarAlt, FaClock, FaUser, FaStar } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 export default function HistoryPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -77,11 +78,10 @@ export default function HistoryPage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">Service History</h1>
-        <p className="text-sm md:text-base text-gray-200">View your past appointments and services</p>
-      </div>
+      <PageHeader 
+        title="Service History" 
+        description="View your past appointments and services" 
+      />
 
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">

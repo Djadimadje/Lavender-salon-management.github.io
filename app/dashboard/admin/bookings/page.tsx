@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaCalendarAlt, FaCheckCircle, FaClock, FaBan, FaFilter, FaSearch, FaEdit, FaTrash } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 interface Booking {
   id: number;
@@ -62,11 +63,10 @@ export default function AdminBookingsPage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">Manage Bookings</h1>
-        <p className="text-sm md:text-base text-gray-200">View and manage all salon appointments</p>
-      </div>
+      <PageHeader 
+        title="Manage Bookings" 
+        description="View and manage all salon appointments" 
+      />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

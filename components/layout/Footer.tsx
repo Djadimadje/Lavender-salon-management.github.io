@@ -47,12 +47,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#c9a961]/30 pt-8 text-center">
-          <div className="flex justify-center gap-4 mb-4">
+         {/*<div className="flex justify-center gap-4 mb-4">
             <a href="#" className="w-8 h-8 bg-[#3d2817] text-white rounded-full flex items-center justify-center hover:bg-[#c9a961]">f</a>
             <a href="#" className="w-8 h-8 bg-[#3d2817] text-white rounded-full flex items-center justify-center hover:bg-[#c9a961]">t</a>
             <a href="#" className="w-8 h-8 bg-[#3d2817] text-white rounded-full flex items-center justify-center hover:bg-[#c9a961]">in</a>
             <a href="#" className="w-8 h-8 bg-[#3d2817] text-white rounded-full flex items-center justify-center hover:bg-[#c9a961]">p</a>
-          </div>
+          </div> */}
           <p className="text-sm text-gray-600">&copy; 2025 Lavender Salon. All rights reserved.</p>
         </div>
       </div>

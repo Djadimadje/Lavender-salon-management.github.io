@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FaChartLine, FaCalendarAlt, FaUsers, FaCut, FaDollarSign, FaArrowUp, FaPercentage, FaDownload } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 import RevenueLineChart from './components/RevenueLineChart';
 import RevenueBarChart from './components/RevenueBarChart';
 import ServicePerformanceSection from './components/ServicePerformanceSection';
@@ -48,7 +49,7 @@ export default function AdminReportsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
+      <div className="bg-gradient-to-r from-[#3d2817] to-[#3d2817] text-white p-4 md:p-6 lg:p-8 mb-4 md:mb-6 rounded-lg shadow-md">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Reports & Analytics</h1>

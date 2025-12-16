@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaBell, FaCheck, FaTrash, FaEnvelopeOpen } from 'react-icons/fa';
+import PageHeader from '@/components/shared/PageHeader';
 
 interface Notification {
   id: number;
@@ -92,14 +93,10 @@ export default function StylistNotificationsPage() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-[#3d2817] to-[#8b5e3c] text-white p-4 md:p-6 rounded-lg shadow-md">
-        <div className="flex items-center gap-2 md:gap-3 mb-2">
-          <FaBell className="text-2xl md:text-3xl" />
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">My Notifications</h1>
-        </div>
-        <p className="text-gray-200 text-sm md:text-base">Stay updated with your bookings, reviews, and schedule changes</p>
-      </div>
+      <PageHeader 
+        title="My Notifications" 
+        description="Stay updated with your bookings, reviews, and schedule changes" 
+      />
 
       {/* Stats and Filters */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6">

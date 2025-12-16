@@ -22,8 +22,8 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
-    { href: '#about', label: 'About' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -76,13 +76,14 @@ export default function Navigation() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            {/* Search Button */}
+            {/* Search Button 
             <button
               className="p-2.5 hover:bg-gray-100/80 rounded-full transition-all hover:scale-110"
               aria-label="Search"
             >
               <FiSearch className="w-4 h-4 text-gray-700" />
-            </button>
+            </button> */}
+          
 
             {/* Account Button */}
             <Link
