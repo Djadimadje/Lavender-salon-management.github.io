@@ -10,7 +10,7 @@ export default function OurStory() {
           {/* Image Side */}
           <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/pictures/salon-4.jpg"
+              src="/pictures/Founder.jpg"
               alt="Our Story"
               fill
               className="object-cover"
@@ -23,30 +23,30 @@ export default function OurStory() {
               Our Story
             </h2>
             <div className="w-20 h-1 bg-[#8b5e3c] mb-6"></div>
-            
+
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Founded in 2010, Lavender Salon was born from a simple yet powerful vision: 
-                to create a sanctuary where beauty, wellness, and exceptional service converge. 
-                What started as a small boutique salon has blossomed into a premier destination 
+                Founded in 2010, Lavender Salon was born from a simple yet powerful vision:
+                to create a sanctuary where beauty, wellness, and exceptional service converge.
+                What started as a small boutique salon has blossomed into a premier destination
                 for those seeking transformative beauty experiences.
               </p>
-              
+
               <p>
-                Our founder, Sarah Johnson, recognized the need for a salon that goes beyond 
-                traditional beauty services. She envisioned a space where clients could escape 
+                Our founder, Sarah Johnson, recognized the need for a salon that goes beyond
+                traditional beauty services. She envisioned a space where clients could escape
                 the hustle of daily life and emerge feeling refreshed, confident, and beautiful.
               </p>
-              
+
               <p>
-                Today, Lavender Salon stands as a testament to that vision. With a team of 
-                highly skilled professionals, state-of-the-art facilities, and a commitment 
-                to using only premium products, we continue to set new standards in the beauty 
+                Today, Lavender Salon stands as a testament to that vision. With a team of
+                highly skilled professionals, state-of-the-art facilities, and a commitment
+                to using only premium products, we continue to set new standards in the beauty
                 and wellness industry.
               </p>
 
               <p className="text-[#8b5e3c] font-semibold italic">
-                "Beauty is not just about appearance—it's about how you feel. We're here to 
+                "Beauty is not just about appearance—it's about how you feel. We're here to
                 help you discover your most confident, radiant self."
               </p>
             </div>

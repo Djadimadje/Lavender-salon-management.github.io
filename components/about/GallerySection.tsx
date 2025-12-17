@@ -4,12 +4,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const galleryImages = [
-  { id: 1, src: '/pictures/salon-2.jpeg', alt: 'Salon Interior 1' },
-  { id: 2, src: '/pictures/salon-4.jpg', alt: 'Salon Interior 2' },
-  { id: 3, src: '/pictures/home.jpeg', alt: 'Salon Exterior' },
-  { id: 4, src: '/services/makeup.jpeg', alt: 'Makeup Services' },
-  { id: 5, src: '/services/hair-care.jpeg', alt: 'Hair Care' },
-  { id: 6, src: '/services/nails.jpeg', alt: 'Nail Services' },
+  { id: 1, src: '/pictures/gallery1.jpg', alt: 'Salon Interior 1' },
+  { id: 2, src: '/pictures/gallery2.jpg', alt: 'Salon Interior 2' },
+  { id: 3, src: '/pictures/gallery3.jpg', alt: 'Salon Exterior' },
+  { id: 4, src: '/pictures/gallery4.jpg', alt: 'Makeup Services' },
+  { id: 5, src: '/pictures/gallery5.jpg', alt: 'Hair Care' },
+  { id: 6, src: '/pictures/gallery6.jpg', alt: 'Nail Services' },
 ];
 
 export default function GallerySection() {
@@ -72,7 +72,7 @@ export default function GallerySection() {
             >
               ×
             </button>
-            
+
             <div className="relative w-full max-w-4xl h-[80vh]">
               <Image
                 src={galleryImages[selectedImage].src}
