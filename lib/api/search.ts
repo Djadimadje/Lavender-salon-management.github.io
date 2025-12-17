@@ -3,36 +3,39 @@ import { mockServices } from '@/lib/data/services';
 export interface SearchResult {
   id: string;
   name: string;
-  category: string;
+  category?: string;     // 👈 optional
   price: number;
   image?: string;
   description?: string;
 }
 
+
 export async function searchServices(query: string): Promise<SearchResult[]> {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 200));
 
-  const searchTerm = query.toLowerCase().trim();
+  const searchTerm = query.trim().toLowerCase();
 
   if (!searchTerm) {
     return [];
   }
 
-  // Search through services
   const results = mockServices.filter((service) => {
+    const name = service.name.toLowerCase();
+    const category = service.category?.toLowerCase() ?? '';
+    const description = service.description?.toLowerCase() ?? '';
+
     return (
-      service.name.toLowerCase().includes(searchTerm) ||
-      service.category.toLowerCase().includes(searchTerm) ||
-      service.description.toLowerCase().includes(searchTerm)
+      name.includes(searchTerm) ||
+      category.includes(searchTerm) ||
+      description.includes(searchTerm)
     );
   });
 
-  // Map to SearchResult format
   return results.map((service) => ({
-    id: service.id.toString(),
+    id: String(service.id),
     name: service.name,
-    category: service.category,
+    category: service.category ?? 'Uncategorized',
     price: service.price,
     image: service.image,
     description: service.description,
