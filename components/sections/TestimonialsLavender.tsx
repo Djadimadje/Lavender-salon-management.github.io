@@ -6,7 +6,7 @@ export default function TestimonialsLavender() {
       name: 'Michaela Hayden',
       time: '2 days ago',
       text: 'We are other and about hotels and services was heights: Professional! Spacious! Romantic! It contains fresh artistic and beautiful in the pool service',
-      avatar: '/testimonials/avatar1.jpg',
+      avatar: '/pictures/witness.jpg',
     },
     // Add more testimonials as needed
   ];
@@ -21,7 +21,7 @@ export default function TestimonialsLavender() {
 
         <div className="max-w-4xl mx-auto">
           <div className="text-5xl md:text-8xl text-[#c9a961] opacity-30">"</div>
-          
+
           <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
             <div className="hidden md:flex flex-col gap-4">
               {testimonials.map((testimonial, index) => (

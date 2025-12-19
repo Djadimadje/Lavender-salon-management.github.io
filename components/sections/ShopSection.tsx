@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 export default function ShopSection() {
   const products = [
-    { name: 'Face toner', price: '$45', discount: '-20%', image: '/products/toner.jpg' },
-    { name: 'Night cream', price: '$65', discount: '-15%', image: '/products/cream.jpg' },
-    { name: 'Makeup base', price: '$35', image: '/products/base.jpg' },
-    { name: 'Make up brush', price: '$25', image: '/products/brush.jpg' },
+    { name: 'Face toner', price: '$45', discount: '-20%', image: '/pictures/toner.jpg' },
+    { name: 'Night cream', price: '$65', discount: '-15%', image: '/pictures/cream.jpg' },
+    { name: 'Makeup base', price: '$35', image: '/pictures/makeup_base.jpg' },
+    { name: 'Make up brush', price: '$25', image: '/pictures/makeup_brush.jpg' },
   ];
 
   return (
