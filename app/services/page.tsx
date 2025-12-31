@@ -6,6 +6,7 @@ import { useAuth } from '@/lib/hooks/useAuth';
 import { useSearchParams } from 'next/navigation';
 import {FaPaintBrush, FaSpa, FaCut, FaHeart, FaCalendarAlt } from 'react-icons/fa';
 import { FaScissors } from 'react-icons/fa6';
+import Image from 'next/image';
 import AdminSidebar from '@/components/layout/sidebar/AdminSidebar';
 import CashierSidebar from '@/components/layout/sidebar/Cashier';
 import StylistSidebar from '@/components/layout/sidebar/StylistSidebar';
@@ -113,12 +114,23 @@ function ServicesContent() {
               key={service.id}
               className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Service Image/Icon */}
-              <div className="h-48 bg-gradient-to-br from-[#f5ebe0] to-[#c9a961]/20 flex items-center justify-center">
-                <div className="text-6xl">
-                  {getCategoryIcon(service.category || 'Beauty')}
-                </div>
-              </div>
+                  {/* Service Image/Icon */}
+                  {service.image ? (
+                    <div className="relative h-48 bg-gradient-to-br from-[#f5ebe0] to-[#c9a961]/20 overflow-hidden">
+                      <Image
+                        src={service.image.startsWith('http') ? service.image : (service.image.startsWith('/') ? service.image : `/pictures/${service.image}`)}
+                        alt={service.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover object-center"
+                        priority={false}
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-48 bg-gradient-to-br from-[#f5ebe0] to-[#c9a961]/20 flex items-center justify-center">
+                      <div className="text-6xl">{getCategoryIcon(service.category || 'Beauty')}</div>
+                    </div>
+                  )}
 
               {/* Service Details */}
               <div className="p-5">
@@ -135,7 +147,7 @@ function ServicesContent() {
 
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <p className="text-2xl font-bold text-[#8b5e3c]">${service.price}</p>
+                    <p className="text-2xl font-bold text-[#8b5e3c]">Rwf{service.price}</p>
                     <p className="text-xs text-gray-500">{service.duration} minutes</p>
                   </div>
                 </div>

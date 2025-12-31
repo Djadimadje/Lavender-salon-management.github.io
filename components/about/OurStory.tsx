@@ -8,7 +8,7 @@ export default function OurStory() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
-          <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/pictures/Founder.jpg"
               alt="Our Story"

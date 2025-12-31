@@ -141,7 +141,7 @@ export default function BookingSuccessPage() {
                 </div>
                 <div className="flex justify-between py-3 bg-gray-50 px-3 rounded">
                   <span className="font-bold text-gray-900">Total Amount:</span>
-                  <span className="font-bold text-xl text-[#8b5e3c]">${bookingDetails.price}</span>
+                  <span className="font-bold text-xl text-[#8b5e3c]">Rwf{bookingDetails.price}</span>
                 </div>
               </div>
 

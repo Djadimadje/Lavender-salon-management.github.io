@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { FiMenu, FiX, FiSearch, FiUser, FiCalendar, FiPhone } from 'react-icons/fi';
+import CartBadge from '@/components/cart/CartBadge';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -84,6 +85,9 @@ export default function Navigation() {
               <FiSearch className="w-4 h-4 text-gray-700" />
             </button> */}
           
+
+            {/* Cart Badge */}
+            <CartBadge />
 
             {/* Account Button */}
             <Link

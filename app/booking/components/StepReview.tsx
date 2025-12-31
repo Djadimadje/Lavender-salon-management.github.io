@@ -107,7 +107,7 @@ export default function StepReview({
               <p className="text-sm text-gray-600 mt-1">{selectedService.description}</p>
               <div className="flex gap-4 mt-2">
                 <p className="text-sm font-semibold text-[#8b5e3c]">
-                  ${selectedService.price}
+                  Rwf{selectedService.price}
                 </p>
                 <p className="text-sm text-gray-600">{selectedService.duration} minutes</p>
               </div>

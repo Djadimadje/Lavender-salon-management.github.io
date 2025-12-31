@@ -3,6 +3,7 @@ export interface Stylist {
   name: string;
   email: string;
   phone?: string;
+  photo?: string;
   gender: 'male' | 'female';
   specialty: string[];
   status: 'active' | 'inactive';
@@ -18,6 +19,7 @@ export const stylists: Stylist[] = [
     name: 'Emma Wilson',
     email: 'emma@lavender.com',
     phone: '+1 234-567-8902',
+    photo: '/pictures/Emma.jpg',
     gender: 'female',
     specialty: ['Hair Styling', 'Hair Coloring', 'Bridal'],
     status: 'active',
@@ -30,6 +32,7 @@ export const stylists: Stylist[] = [
     name: 'Olivia Taylor',
     email: 'olivia@lavender.com',
     phone: '+1 234-567-8904',
+    photo: '/pictures/Olivia.jpg',
     gender: 'female',
     specialty: ['Spa Treatment', 'Massage', 'Facial'],
     status: 'active',
@@ -42,6 +45,7 @@ export const stylists: Stylist[] = [
     name: 'Sophia Martinez',
     email: 'sophia@lavender.com',
     phone: '+1 234-567-8909',
+    photo: '/pictures/Sophia.jpg',
     gender: 'female',
     specialty: ['Nail Care', 'Manicure', 'Pedicure'],
     status: 'active',
@@ -54,6 +58,7 @@ export const stylists: Stylist[] = [
     name: 'David Chen',
     email: 'david@lavender.com',
     phone: '+1 234-567-8910',
+    photo: '/pictures/David.jpg',
     gender: 'male',
     specialty: ['Hair Styling', 'Beard Grooming', 'Hair Coloring'],
     status: 'active',
@@ -66,6 +71,7 @@ export const stylists: Stylist[] = [
     name: 'Marcus Johnson',
     email: 'marcus@lavender.com',
     phone: '+1 234-567-8911',
+    photo: '/pictures/Marcus.jpg',
     gender: 'male',
     specialty: ['Barbering', 'Hair Cut', 'Styling'],
     status: 'active',

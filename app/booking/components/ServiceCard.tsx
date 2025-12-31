@@ -24,9 +24,22 @@ export default function ServiceCard({ service, isSelected, onSelect }: ServiceCa
       )}
 
       {/* Service Image */}
-      <div className="h-48 bg-gradient-to-br from-[#f5ebe0] to-[#c9a961] flex items-center justify-center">
-        <div className="text-6xl opacity-50">💇</div>
-        {/* In production, use actual image: <img src={service.image} alt={service.name} className="w-full h-full object-cover" /> */}
+      <div className="h-48 bg-gradient-to-br from-[#f5ebe0] to-[#c9a961] overflow-hidden">
+        {service.image ? (
+          <img
+            src={service.image.startsWith('http') || service.image.startsWith('/') ? service.image : `/pictures/${service.image}`}
+            alt={service.name}
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+            onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+              const img = e.currentTarget as HTMLImageElement;
+              img.onerror = null;
+              img.src = '/pictures/Braids.jpg';
+            }}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-6xl opacity-50">💇</div>
+        )}
       </div>
 
       {/* Service Details */}
@@ -39,7 +52,7 @@ export default function ServiceCard({ service, isSelected, onSelect }: ServiceCa
             <FaClock className="text-[#8b5e3c]" />
             <span>{service.duration} min</span>
           </div>
-          <div className="text-xl font-bold text-[#8b5e3c]">${service.price}</div>
+          <div className="text-xl font-bold text-[#8b5e3c]">Rwf{service.price}</div>
         </div>
       </div>
     </div>

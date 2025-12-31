@@ -1,0 +1,88 @@
+"use client";
+
+import React, { useEffect, useState } from 'react';
+import Footer from '@/components/layout/Footer';
+
+type Order = {
+  id: string;
+  name?: string;
+  email?: string;
+  phone?: string;
+  items?: any[];
+  total?: number;
+};
+
+export default function OrderClient({ id }: { id: string }) {
+  const [order, setOrder] = useState<Order | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(`order:${id}`);
+      if (raw) setOrder(JSON.parse(raw));
+    } catch (e) {
+      // ignore
+    }
+  }, [id]);
+
+  if (!order) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 pt-24">
+        <div className="container mx-auto px-4">
+          <main className="max-w-4xl mx-auto py-12 px-4 w-full">
+            <div className="bg-white rounded-lg shadow p-6">
+              <h1 className="text-2xl font-bold mb-4">Order not found</h1>
+              <p className="text-gray-600">We couldn't find that order in the server store. If you placed the order from this browser, it may be available in local storage.</p>
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="min-h-screen bg-gray-50 py-8 pt-24">
+        <div className="container mx-auto px-4">
+          <main className="max-w-4xl mx-auto py-12 px-4 w-full">
+            <div className="bg-white rounded-lg shadow p-6">
+              <h1 className="text-2xl font-bold mb-4">Thank you for your order</h1>
+              <p className="mb-4">Order ID: <span className="font-mono">{order.id}</span></p>
+
+              <div className="mb-4">
+                <h2 className="font-semibold">Customer</h2>
+                <div>{order.name}</div>
+                <div className="text-sm text-gray-500">{order.email}</div>
+                {order.phone && <div className="text-sm text-gray-500">{order.phone}</div>}
+              </div>
+
+              <div>
+                <h2 className="font-semibold mb-2">Items</h2>
+                <div className="space-y-3">
+                  {order.items && order.items.length ? (
+                    order.items.map((it: any) => (
+                      <div key={it.id} className="flex items-center justify-between bg-gray-50 p-3 rounded">
+                        <div>
+                          <div className="font-medium">{it.name}</div>
+                          <div className="text-sm text-gray-500">Rwf{it.price} × {it.qty}</div>
+                        </div>
+                        <div className="font-semibold">Rwf{(it.price || 0) * (it.qty || 0)}</div>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="text-gray-500">No items recorded</div>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between">
+                <div className="text-sm text-gray-600">Placed</div>
+                <div className="text-xl font-bold">Rwf{order.total}</div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}

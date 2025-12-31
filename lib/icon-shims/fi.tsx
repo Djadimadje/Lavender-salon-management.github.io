@@ -16,6 +16,8 @@ import {
   Award,
   Users,
   Star
+  ,
+  ShoppingCart
 } from 'lucide-react';
 
 function wrap(Icon: React.ComponentType<LucideProps>) {
@@ -39,3 +41,4 @@ export const FiPlay = wrap(Play);
 export const FiAward = wrap(Award);
 export const FiUsers = wrap(Users);
 export const FiStar = wrap(Star);
+export const FiShoppingCart = wrap(ShoppingCart);

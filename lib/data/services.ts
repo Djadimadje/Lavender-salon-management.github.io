@@ -7,7 +7,7 @@ export const mockServices: Service[] = [
     description: 'Professional haircut and styling tailored to your preference',
     price: 45,
     duration: 60,
-    image: '/services/haircut.jpg',
+    image: '/pictures/haircut.jpg',
     category: 'Hair',
   },
   {
@@ -16,7 +16,7 @@ export const mockServices: Service[] = [
     description: 'Full or partial hair coloring with premium products',
     price: 120,
     duration: 120,
-    image: '/services/hair-coloring.jpg',
+      image: '/pictures/gallery1.jpg',
     category: 'Hair',
   },
   {
@@ -25,7 +25,7 @@ export const mockServices: Service[] = [
     description: 'Beautiful braiding styles from classic to modern',
     price: 80,
     duration: 90,
-    image: '/services/braids.jpg',
+      image: '/pictures/braids.jpg',
     category: 'Hair',
   },
   {
@@ -34,7 +34,7 @@ export const mockServices: Service[] = [
     description: 'High-quality hair extensions for length and volume',
     price: 200,
     duration: 150,
-    image: '/services/extensions.jpg',
+      image: '/pictures/Master_Hair_Stylist.jpg',
     category: 'Hair',
   },
   {
@@ -43,7 +43,8 @@ export const mockServices: Service[] = [
     description: 'Custom wig cutting, styling, and fitting',
     price: 100,
     duration: 90,
-    image: '/services/wig.jpg',
+      image: '/pictures/gallery3.jpg',
+
     category: 'Hair',
   },
   {
@@ -52,7 +53,7 @@ export const mockServices: Service[] = [
     description: 'Professional makeup for any occasion',
     price: 75,
     duration: 60,
-    image: '/services/makeup.jpg',
+      image: '/pictures/makeup.jpeg',
     category: 'Makeup',
   },
   {
@@ -61,7 +62,7 @@ export const mockServices: Service[] = [
     description: 'Special bridal makeup package with trial session',
     price: 150,
     duration: 90,
-    image: '/services/bridal-makeup.jpg',
+      image: '/pictures/makeup.jpeg',
     category: 'Makeup',
   },
   {
@@ -70,7 +71,7 @@ export const mockServices: Service[] = [
     description: 'Complete manicure with polish and hand treatment',
     price: 35,
     duration: 45,
-    image: '/services/manicure.jpg',
+      image: '/pictures/nails.jpeg',
     category: 'Nails',
   },
   {
@@ -79,7 +80,7 @@ export const mockServices: Service[] = [
     description: 'Relaxing pedicure with foot massage and polish',
     price: 45,
     duration: 60,
-    image: '/services/pedicure.jpg',
+      image: '/pictures/nail_Technician.jpg',
     category: 'Nails',
   },
   {
@@ -88,7 +89,7 @@ export const mockServices: Service[] = [
     description: 'Full set of acrylic nail extensions',
     price: 65,
     duration: 90,
-    image: '/services/acrylic.jpg',
+      image: '/pictures/nails.jpeg',
     category: 'Nails',
   },
   {
@@ -97,7 +98,7 @@ export const mockServices: Service[] = [
     description: 'Rejuvenating facial treatment with skin analysis',
     price: 90,
     duration: 75,
-    image: '/services/facial.jpg',
+      image: '/pictures/spa_facial.jpg',  
     category: 'Spa',
   },
   {
@@ -106,7 +107,7 @@ export const mockServices: Service[] = [
     description: 'Therapeutic massage for muscle tension relief',
     price: 110,
     duration: 90,
-    image: '/services/massage.jpg',
+      image: '/pictures/massage1.JPG',
     category: 'Spa',
   },
   {
@@ -115,7 +116,7 @@ export const mockServices: Service[] = [
     description: 'Professional eyebrow shaping and tinting',
     price: 25,
     duration: 30,
-    image: '/services/eyebrows.jpg',
+      image: '/pictures/eyebrows.jpg',
     category: 'Beauty',
   },
   {
@@ -124,7 +125,7 @@ export const mockServices: Service[] = [
     description: 'Semi-permanent eyelash extensions',
     price: 120,
     duration: 120,
-    image: '/services/lashes.jpg',
+      image: '/pictures/lashes.jpg',
     category: 'Beauty',
   },
   {
@@ -133,7 +134,7 @@ export const mockServices: Service[] = [
     description: 'Professional waxing services for smooth skin',
     price: 40,
     duration: 45,
-    image: '/services/waxing.jpg',
+      image: '/pictures/waxing.JPG',
     category: 'Beauty',
   },
 ];
