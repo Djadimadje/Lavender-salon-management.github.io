@@ -59,16 +59,11 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-lg font-medium transition-all group ${
-                    isActive ? 'text-[#8b5e3c]' : 'text-gray-700 hover:text-[#8b5e3c]'
-                  }`}
+                  className={`relative px-4 py-2 text-lg font-medium transition-all text-gray-700`}
                 >
                   <span className="relative z-10">{link.label}</span>
-                  <div className={`absolute inset-0 bg-[#f5ebe0] rounded-lg transition-opacity ${
-                    isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                  }`}></div>
                   <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-[#8b5e3c] to-[#c9a961] transition-all ${
-                    isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4'
+                    isActive ? 'w-3/4' : 'w-0'
                   }`}></div>
                 </Link>
               );
@@ -136,10 +131,8 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-4 py-3 font-medium transition-all rounded-lg ${
-                    isActive 
-                      ? 'bg-[#f5ebe0]/50 text-[#8b5e3c]' 
-                      : 'text-gray-700 hover:bg-[#f5ebe0]/50 hover:text-[#8b5e3c]'
+                  className={`block px-4 py-3 font-medium transition-all rounded-lg text-gray-700 ${
+                    isActive ? 'border-b-2 border-[#8b5e3c]' : ''
                   }`}
                 >
                   {link.label}
